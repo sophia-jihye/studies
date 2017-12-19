@@ -11,8 +11,8 @@ public class ArrayGraphDto {
 
 	public ArrayGraphDto(int numOfVertex) {
 		this.numOfVertex = numOfVertex;
-		aGraph = new int[numOfVertex][numOfVertex]; // 변수 초기화
-		visit = new boolean[numOfVertex]; // 변수 초기화
+		aGraph = new int[numOfVertex][numOfVertex]; 
+		visit = new boolean[numOfVertex]; 
 	}
 
 	public int getNumOfVertex() {
@@ -44,7 +44,7 @@ public class ArrayGraphDto {
 		visit[i] = true;
 		System.out.print(i + " ");
 
-		for (int j = 1; j < numOfVertex; j++) {
+		for (int j = 0; j < numOfVertex; j++) {
 			if (aGraph[i][j] == 1 && visit[j] == false) {
 				dfs(j);
 			}
