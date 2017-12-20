@@ -4,9 +4,9 @@ public class Main {
 	public static void main(String[] args) {
 
 		final String arrayGraph = "ARRAY";
-		final String arrayListGraph = "ARRAYLIST";
+		final String graphSample = "GRAPH";
 
-		String testNm = arrayGraph;
+		String testNm = graphSample;
 
 		final int 동수 = 0;
 		final int 지민 = 1;
@@ -51,7 +51,35 @@ public class Main {
 			// 1번부터 탐색 시작
 			aGraphDto.dfs(동수);
 
-		} else if (testNm.equals(arrayListGraph)) {
+		} else if (testNm.equals(graphSample)) {
+			Graph graph = new Graph();
+			graph.createGraph();
+
+			for (int i = 0; i < 7; i++)
+				graph.insertVertex(i);
+
+			graph.insertEdge(0, 2);
+			graph.insertEdge(0, 1);
+			graph.insertEdge(1, 4);
+			graph.insertEdge(1, 3);
+			graph.insertEdge(1, 0);
+			graph.insertEdge(2, 4);
+			graph.insertEdge(2, 0);
+			graph.insertEdge(3, 6);
+			graph.insertEdge(3, 1);
+			graph.insertEdge(4, 6);
+			graph.insertEdge(4, 2);
+			graph.insertEdge(4, 1);
+			graph.insertEdge(5, 6);
+			graph.insertEdge(6, 5);
+			graph.insertEdge(6, 4);
+			graph.insertEdge(6, 3);
+
+			System.out.print("Graph의 인접 리스트: ");
+			graph.printAdjList();
+
+			System.out.println("\n\n Depth First Search:");
+			graph.depthFirstSearch(0);
 
 		}
 	}
